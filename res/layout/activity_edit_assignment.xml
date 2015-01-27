@@ -1,0 +1,131 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    tools:context="android.example.edit.MainActivity" >
+
+    <EditText
+        android:id="@+id/Message"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/message"
+        android:layout_alignRight="@+id/Time"
+        android:layout_below="@+id/message"
+        android:maxLines="7"
+        android:ems="10" />
+
+    <EditText
+        android:id="@+id/T_Text"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/time"
+        android:layout_alignRight="@+id/textView1"
+        android:layout_below="@+id/theme"
+        android:maxLines="1"
+        android:ems="10" />
+
+    <EditText
+        android:id="@+id/Time"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/theme"
+        android:layout_alignRight="@+id/textView1"
+        android:layout_below="@+id/time"
+        android:maxLines="1"
+        android:ems="10" >
+
+        <requestFocus />
+    </EditText>
+
+    <TextView
+        android:id="@+id/message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/Time"
+        android:layout_below="@+id/Time"
+        android:layout_marginTop="14dp"
+        android:text="内容"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/Time"
+        android:layout_below="@+id/T_Text"
+        android:layout_marginTop="16dp"
+        android:text="截止时间"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical" >
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/Title"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_alignParentTop="true"
+        android:background="#1C86EE"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:text="编辑任务" />
+
+    <TextView
+        android:id="@+id/theme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/linearLayout1"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="78dp"
+        android:text="主题"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/theme"
+        android:layout_marginRight="20dp" />
+
+    <Button
+        android:id="@+id/save"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/next"
+        android:layout_alignLeft="@+id/Message"
+        android:layout_marginBottom="21dp"
+        android:layout_toLeftOf="@+id/textView1"
+        android:background="#1C86EE"
+        android:text="保存" />
+
+    <Button
+        android:id="@+id/next"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/save"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="14dp"
+        android:layout_toLeftOf="@+id/textView1"
+        android:background="#1C86EE"
+        android:text="人员分配" />
+
+    <Button
+        android:id="@+id/back"
+        android:layout_width="60dp"
+        android:layout_height="30dp"
+        android:layout_alignBaseline="@+id/Title"
+        android:layout_alignBottom="@+id/Title"
+        android:layout_alignRight="@+id/theme"
+        android:background="#ADADAD"
+        android:text="返回" />
+
+</RelativeLayout>

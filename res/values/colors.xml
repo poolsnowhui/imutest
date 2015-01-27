@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="topic">#2680EF</color>
+    <color name="btnBackGround">#E1E1E1</color>
+    <color name="tv_topic">#F9FAFC</color>
+    <color name="tv_background">#E0E0E0</color>
+    <color name="black">#5D5D5D</color>
+    <color name="topic_background_darkblue">#2680EF</color>
+    <color name="topic_font">#F9FAFC</color>
+    <color name="list_cell_background_darkgrey">#E0E0E0</color>
+    <color name="list_cell_font_greyblack">#5D5D5D</color>
+
+</resources>
