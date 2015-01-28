@@ -26,7 +26,7 @@ public class Aty_ActivityList extends Activity implements OnItemClickListener {
 		findViewById(R.id.btnAdd).setOnClickListener(new View.OnClickListener() {
 
 			public void onClick(View v) {
-				adapter.add(new ListCellData(Aty_ActivityList.this, "����"+numTouch+"\n",new Intent(Aty_ActivityList.this, Aty_EditAssignment.class)));
+				adapter.add(new ListCellData(Aty_ActivityList.this, "Task"+numTouch+"\n",new Intent(Aty_ActivityList.this, Aty_EditAssignment.class)));
 				numTouch++;				
 			}
 		});

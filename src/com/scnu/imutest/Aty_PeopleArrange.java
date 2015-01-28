@@ -17,7 +17,6 @@ public class Aty_PeopleArrange extends Activity implements OnItemClickListener {
 
 	private ListView lv;
 	private ArrayAdapter<ListCellData2> adapter;
-//	private TextView tvTaskTheme;
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,8 +67,7 @@ public class Aty_PeopleArrange extends Activity implements OnItemClickListener {
 	public void onItemClick(AdapterView<?> parent, View view, int position,
 			long id) {
 		ListCellData2 data = adapter.getItem(position);
-		
-		Toast.makeText(this, String.format("����:%s ְλ:%s ����:%s ����:%s", data.getName(),data.getPosition(),data.getDepartment(),data.getClub()), Toast.LENGTH_SHORT).show();
+		Toast.makeText(this, String.format("名字:%s 任务:%s 部门:%s 社团:%s", data.getName(),data.getPosition(),data.getDepartment(),data.getClub()), Toast.LENGTH_SHORT).show();		
 	}
 	
 	public void startListPeople(View view){

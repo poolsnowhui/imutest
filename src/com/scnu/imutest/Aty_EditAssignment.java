@@ -14,54 +14,50 @@ import android.widget.Toast;
 
 public class Aty_EditAssignment extends Activity {
 	
-	//��������
-		@SuppressWarnings("unused")
-		private TextView theme;      //�����ʶ�����
-		@SuppressWarnings("unused")
-		private TextView time;       //��ֹʱ���ʶ�����
-		@SuppressWarnings("unused")
-		private TextView message;    //���ݱ�ʶ�����
-		private EditText m_theme;    //������������
-		private EditText m_time;     //��ֹʱ����������
-		private EditText m_message;  //������������
-		private String s_department;  //���������ַ���
-		private String s_theme;          //���������ַ���
-		private String s_time;            //�����ֹʱ���ַ���
-		private String s_message;     //���������ַ���
+	//定义
+		private TextView theme;      //定义主题文本框变量
+		private TextView time;        //定义截止时间文本框变量
+		private TextView message;    //定义内容文本框变量
+		private EditText m_theme;    //定义主题输入框变量
+		private EditText m_time;     //定义截止时间输入框变量
+		private EditText m_message;  //定义内容输入框变量
+		private String s_department;  //社团字符串
+		private String s_theme;          //主题字符串
+		private String s_time;            //截止时间字符串
+		private String s_message;     //内容字符串
 		private Bundle bundle;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_edit_assignment);
-		/*���TextView����*/
+		/*获得TextView对象*/
 		theme=(TextView)findViewById(R.id.theme);
 		time=(TextView)findViewById(R.id.time);
 		message=(TextView)findViewById(R.id.message);
-		/*���EditText����*/
+		/*获得EditText对象*/
 		m_theme=(EditText)findViewById(R.id.T_Text);
 		m_time=(EditText)findViewById(R.id.Time);
 		m_message=(EditText)findViewById(R.id.Message);
 		
 		//receiveMessage();
 		
-		/*����EditText��ʾ������*/
-		m_theme.setHint("����������");
-		m_time.setHint("�������ֹʱ��");
-		m_message.setHint("��������������");
-		/*���Button����*/
+		/*设置EditText显示的文字*/
+		m_theme.setHint("请输入活动主题");
+		m_time.setHint("请输入截止时间");
+		m_message.setHint("请输入任务内容");
+		/*获得Button对象*/
 		final Button back=(Button)findViewById(R.id.back);
 		final Button save=(Button)findViewById(R.id.save);
 		final Button next=(Button)findViewById(R.id.next);
 		
-		/*����button�齨���¼�listener*/
+		/*设置事件监听*/
 		back.setOnClickListener(backOnClick);
 		save.setOnClickListener(saveOnClick);
 		next.setOnClickListener(nextOnClick);
 	}
 	
-	/*���������һ��Activity���ݵĺ���*/
-	@SuppressWarnings("unused")
+	/*获取前一个Activity传递过来的数据*/
 	private void receiveMessage()
 	{
 		Bundle bundle=this.getIntent().getExtras();
@@ -76,7 +72,7 @@ public class Aty_EditAssignment extends Activity {
 		m_message.setText(s_message);
 	}
 	
-	/*��ȡ�༭���ڵ����ݣ����������*/
+	/*将Activity的数据打包并传递到下一个Activity*/
 	public void getMessage()
 	{
 		s_theme=m_theme.getText().toString();
@@ -97,7 +93,7 @@ public class Aty_EditAssignment extends Activity {
 		toast.show();
 	}
 	
-	//���ذ�ť��Ӧ����
+	//返回按钮响应函数
 	private Button.OnClickListener backOnClick=new Button.OnClickListener()
 	{
 		public void onClick(View u)
@@ -106,7 +102,7 @@ public class Aty_EditAssignment extends Activity {
 		}
 	};
 	
-	//���水ť��Ӧ����
+	//保存按钮响应函数
 	private Button.OnClickListener saveOnClick=new Button.OnClickListener()
 	{
 		public void onClick(View v)
@@ -114,27 +110,28 @@ public class Aty_EditAssignment extends Activity {
 			Intent intent=new Intent();
 			getMessage();
 		    intent.putExtras(bundle);
-			DisplayToast("����������Ϣ�ɹ���");
+		    setResult(RESULT_OK,intent);
+			DisplayToast("保存任务信息成功");
 		}
 	};
 	
-	//��Ա������Ӧ����
+	//人员分配按钮响应函数
 	private Button.OnClickListener nextOnClick=new Button.OnClickListener()
 	{
 		public void onClick(View w)
 		{
 			AlertDialog.Builder nextDlg=new AlertDialog.Builder(Aty_EditAssignment.this);
-			nextDlg.setTitle("����");
-			nextDlg.setMessage("�Ƿ���ת����Ա������棿");
+			nextDlg.setTitle("提醒");
+			nextDlg.setMessage("是否跳转到人员分配界面？");
 			nextDlg.setIcon(android.R.drawable.ic_dialog_info);
 			nextDlg.setCancelable(false);
-			nextDlg.setPositiveButton("��",
+			nextDlg.setPositiveButton("否",
 					new DialogInterface.OnClickListener() {
 						@Override
 						public void onClick(DialogInterface dialog, int which) {
 						}
 					});
-			nextDlg.setNegativeButton("��", 
+			nextDlg.setNegativeButton("是", 
 					new DialogInterface.OnClickListener() {	
 						@Override
 						public void onClick(DialogInterface dialog, int which) {
